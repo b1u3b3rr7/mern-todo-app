@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 function Todo(props) {
-    const { _id, description, responsible, priority } = props.todo;
+    const { _id, description, responsible, priority, completed } = props.todo;
     return (
         <tr>
-            <td>{description}</td>
-            <td>{responsible}</td>
-            <td>{priority}</td>
+            <td className={completed ? 'completed' : null}>{description}</td>
+            <td className={completed ? 'completed' : null}>{responsible}</td>
+            <td className={completed ? 'completed' : null}>{priority}</td>
             <td>
                 <Link to={'/edit/' + _id}>Edit</Link>
             </td>
@@ -31,6 +31,7 @@ function TodosList() {
             console.log("Component disappeared.");
         }
     }, []);
+    
     return (
         <div>
             <h3>Todos List</h3>

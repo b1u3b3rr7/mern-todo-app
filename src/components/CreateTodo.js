@@ -100,7 +100,7 @@ function CreateTodo() {
                             checked={priority === 'High'}
                             onChange={onChange}
                         />
-                        <label className="form-check-label">Low</label>
+                        <label className="form-check-label">High</label>
                     </div>
                 </div>
                 <div className="form-group">
