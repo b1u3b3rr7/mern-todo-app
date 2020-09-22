@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function CreateTodo() {
+function CreateTodo(props) {
     const [inputs, setInputs] = useState({
         description: '',
         responsible: '',
@@ -21,10 +21,6 @@ function CreateTodo() {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(`Form submitted:`);
-        console.log(`Description: ${description}`);
-        console.log(`Responsible: ${responsible}`);
-        console.log(`Priority: ${priority}`);
 
         const newTodo = {
             description: description,
@@ -42,6 +38,8 @@ function CreateTodo() {
             priority: '',
             completed: false
         });
+
+        props.history.push('/');
     };
 
     return (

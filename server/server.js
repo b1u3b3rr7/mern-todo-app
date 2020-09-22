@@ -42,9 +42,6 @@ todoRoutes.route('/add').post(function (req, res) {
 });
 
 todoRoutes.route('/update/:id').post(function (req, res) {
-    console.log(req.params.id);
-    console.log(req.body);
-    /*
     Todo.findById(req.params.id, function (err, todo) {
         if (!todo)
             res.status(404).send("data is not found");
@@ -63,7 +60,6 @@ todoRoutes.route('/update/:id').post(function (req, res) {
                 });
         }
     });
-    */
 });
 
 mongoose.connect('mongodb://localhost:27017/todos', { useNewUrlParser: true });

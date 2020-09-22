@@ -18,7 +18,7 @@ function Todo(props) {
 
 function TodosList() {
     const [todos, setTodos] = useState([]);
-
+    console.log("Component appeared.");
     useEffect(() => {
         axios.get('http://localhost:5000/todos/')
             .then(response => {
